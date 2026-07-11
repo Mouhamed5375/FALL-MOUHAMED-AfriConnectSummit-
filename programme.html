@@ -1,15 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Acceuil</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- votre feuille style css -->
     <link rel="stylesheet" href="Css/Style.css">
 </head>
+
 <body>
     <!-- le contenu de la page -->
+    <!--NAVBAR  -->
+    <header class="navbar" id="navbar">
+        <div class="navb-container">
+            <a href="index.html" class="navb-logo">AfriConnect<span>Summit</span></a>
+            <nav class="navbar-nav" id="navbarNav" aria-label="navigation">
+                <ul class="navbar-links">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="contact.html">Inscription</a></li>
+                </ul>
+                <button>toggle</button>
+            </nav>
+            <div class="navbar-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème sombre / clair">
+                    <i class="bi bi-moon-starts-fill"></i>
+                </button>
+                <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu" arial-expanded="false">
 
+                </button>
+            </div>
+        </div>
+    </header>
+    <!--  -->
+    <main>
+
+        <!-- hero interne -->
+        <section class="page-hero">
+            <h1>Programme</h1>
+            <nav aria-label="fil d'Ariane" class="breadcrumb"> 
+                <a href="index.html">Acceuil</a><span>/</span><span>Programme</span>
+                
+            </nav>
+
+        </section>
+
+        <!-- onglet 3 jours -->
+        <section class="schedule" id="programme">
+            <div class="tabs" role="tablist" aria-label="Selection du jour">
+                <button class="tab active" data-days="1" role="tab" arial-selected="true">jour 1 - 13 Oct</button>
+                <button class="tab" data-days="2" role="tab" arial-selected="false">jour 2 - 14 Oct</button>
+                <button class="tab" data-days="3" role="tab" arial-selected="false">jour 3 - 15 Oct</button>
+            </div>
+
+            <div class="tab-panel active" id="day-1" role="tabpanel">
+                <table>
+                    <thead>
+                        <thead>
+                            <tr>
+                                <th>Heure</th>
+                                <th>Session</th>
+                                <th>Intervenant</th>
+                                <th>Salle</th>
+                            </tr>
+                        </thead>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08:30</td>
+                            <td>Accueil & petit-déjeuner networking</td>
+                            <td>—</td>
+                            <td>Hall principal</td>
+                        </tr>
+                        <tr>
+                            <td>09:30</td>
+                            <td>Keynote d'ouverture : l'Afrique en 2030</td>
+                            <td>Amina Diallo</td>
+                            <td>Grand Amphithéâtre</td>
+                        </tr>
+                        <tr>
+                            <td>11:00</td>
+                            <td>Construire une fintech panafricaine</td>
+                            <td>David Mwangi</td>
+                            <td>Salle A</td>
+                        </tr>
+                        <tr>
+                            <td>14:00</td>
+                            <td>Design systems à grande échelle</td>
+                            <td>Fatima Zahra</td>
+                            <td>Salle B</td>
+                        </tr>
+                        <tr>
+                            <td>16:00</td>
+                            <td>Table ronde : financer l'innovation</td>
+                            <td>Kwame Mensah</td>
+                            <td>Grand Amphithéâtre</td>
+                        </tr>
+                    </tbody>
+                </table>    
+            </div>
+
+            <div class="tab-panel" id="day-2" role="tabpanel" hidden>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Session</th>
+                            <th>Intervenant</th>
+                            <th>Salle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09:00</td>
+                            <td>IA générative appliquée au commerce</td>
+                            <td>Sofia Bakari</td>
+                            <td>Salle A</td>
+                        </tr>
+                        <tr>
+                            <td>10:30</td>
+                            <td>Data engineering à l'échelle du continent</td>
+                            <td>Yusuf Idris</td>
+                            <td>Salle B</td>
+                        </tr>
+                        <tr>
+                            <td>13:00</td>
+                            <td>Atelier : sécuriser une API publique</td>
+                            <td>Grace Owusu</td>
+                            <td>Salle C</td>
+                        </tr>
+                        <tr>
+                            <td>15:00</td>
+                            <td>Pitch startups — session investisseurs</td>
+                            <td>Fatima Zahra</td>
+                            <td>Grand Amphithéâtre</td>
+                        </tr>
+                        <tr>
+                            <td>17:00</td>
+                            <td>Panafricanisme numérique : enjeux</td>
+                            <td>Chidi Okafor</td>
+                            <td>Salle A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="tab-panel" id="day-3" role="tabpanel" hidden>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Session</th>
+                            <th>Intervenant</th>
+                            <th>Salle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09:00</td>
+                            <td>UX writing pour produits multilingues</td>
+                            <td>Amara Toure</td>
+                            <td>Salle B</td>
+                        </tr>
+                        <tr>
+                            <td>10:30</td>
+                            <td>Scalabilité cloud en environnement low-cost</td>
+                            <td>David Mwangi</td>
+                            <td>Salle A</td>
+                        </tr>
+                        <tr>
+                            <td>13:00</td>
+                            <td>Atelier : accessibilité web</td>
+                            <td>Grace Owusu</td>
+                            <td>Salle C</td>
+                        </tr>
+                        <tr>
+                            <td>15:00</td>
+                            <td>Clôture & remise des prix startups</td>
+                            <td>Amina Diallo</td>
+                            <td>Grand Amphithéâtre</td>
+                        </tr>
+                        <tr>
+                            <td>16:30</td>
+                            <td>Cocktail de clôture</td>
+                            <td>—</td>
+                            <td>Terrasse</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- thematique  -->
+        <section class="themes" id="thematique">
+            <h2 class="section-title">Thématiques</h2>
+            <div class="themes-grid">
+                <article class="theme-card reveal">
+                    <i class="bi bi-cpu theme-card-icon" aria-hidden="true"></i>
+                    <h3>IA & Tech</h3>
+                    <p>Machine learning, automatisation et infrastructures logicielles.</p>
+                </article>
+                <article class="theme-card reveal">
+                    <i class="bi bi-graph-up-arrow theme-card-icon" aria-hidden="true"></i>
+                    <h3>Business</h3>
+                    <p>Croissance, financement et stratégies d'expansion panafricaines.</p>
+                </article>
+                <article class="theme-card reveal">
+                    <i class="bi bi-palette2 theme-card-icon" aria-hidden="true"></i>
+                    <h3>Design</h3>
+                    <p>Design systems, UX writing et accessibilité numérique.</p>
+                </article>
+                <article class="theme-card reveal">
+                    <i class="bi bi-bar-chart-line theme-card-icon" aria-hidden="true"></i>
+                    <h3>Data</h3>
+                    <p>Ingénierie des données et prise de décision par la donnée.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!--FOOTER  -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>AfriConnect Summit</h3>
+                <p>Le sommet annuel des bâtisseurs de la tech africaine.</p>
+            </div>
+            <div class="footer-col">
+                <h3>navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Inscription</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>suivez-nous</h3>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="LinkedIn "><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram "><i class="bi bi-instagram"></i></a>
+                </div>  
+            </div>
+        </div>
+        <p class="footer-copy">&copy;<span dir="year"></span>AfriConnect Summit. Tous droits réservés.</p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria- aria-label="Retour en haut de page">
+        <li class="bi bi-arrow-up"></li>
+    </button>
 
 
 

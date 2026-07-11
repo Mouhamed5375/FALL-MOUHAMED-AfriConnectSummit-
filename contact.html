@@ -1,19 +1,226 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Acceuil</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- votre feuille style css -->
     <link rel="stylesheet" href="Css/Style.css">
 </head>
+
 <body>
     <!-- le contenu de la page -->
+    <!--NAVBAR  -->
+    <header class="navbar" id="navbar">
+        <div class="navb-container">
+            <a href="index.html" class="navb-logo">AfriConnect<span>Summit</span></a>
+            <nav class="navbar-nav" id="navbarNav" aria-label="navigation">
+                <ul class="navbar-links">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="contact.html">Inscription</a></li>
+                </ul>
+                <button>toggle</button>
+            </nav>
+            <div class="navbar-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème sombre / clair">
+                    <i class="bi bi-moon-starts-fill"></i>
+                </button>
+                <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu" arial-expanded="false">
 
+                </button>
+            </div>
+        </div>
+    </header>  
+    <!-- le contenu de la page -->
+    <main>
+ <!-- section hero -->
+        <section class="page-hero">
+            <h1>Inscription & Contact</h1>
+      <nav aria-label="Fil d'Ariane" class="breadcrumb">
+        <a href="index.html">Accueil</a> <span>/</span> <span>Contact</span>
+      </nav>
+        </section>
 
+        <!-- formulaire -->
+        <section class="registration" id="inscription">
+            <div class="registration__wrapper">
+        
+                <form class="registration__form" id="registrationForm" novalidate>
+                    <h2>Formulaire d'inscription</h2>
+        
+                    <div class="form-group">
+                        <label for="fullname">Nom complet <span aria-hidden="true">*</span></label>
+                        <input type="text" id="fullname" name="fullname" required>
+                        <span class="form-error" id="fullname-error"></span>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="email">Adresse email <span aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="form-error" id="email-error"></span>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="phone">Téléphone <span aria-hidden="true">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="form-error" id="phone-error"></span>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="participationType">Type de participation <span aria-hidden="true">*</span></label>
+                        <select id="participationType" name="participationType" required>
+                            <option value="">-- Sélectionnez --</option>
+                            <option value="participant">Participant</option>
+                            <option value="intervenant">Intervenant</option>
+                            <option value="sponsor">Sponsor</option>
+                            <option value="presse">Presse</option>
+                        </select>
+                        <span class="form-error" id="participationType-error"></span>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="country">Pays africain <span aria-hidden="true">*</span></label>
+                        <select id="country" name="country" required>
+                            <option value="">-- Sélectionnez --</option>
+                            <option value="senegal">Sénégal</option>
+                            <option value="ghana">Ghana</option>
+                            <option value="maroc">Maroc</option>
+                            <option value="kenya">Kenya</option>
+                            <option value="nigeria">Nigéria</option>
+                            <option value="rwanda">Rwanda</option>
+                            <option value="cote-ivoire">Côte d'Ivoire</option>
+                            <option value="tanzanie">Tanzanie</option>
+                            <option value="mali">Mali</option>
+                            <option value="tunisie">Tunisie</option>
+                            <option value="cameroun">Cameroun</option>
+                            <option value="egypte">Égypte</option>
+                        </select>
+                        <span class="form-error" id="country-error"></span>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="message">Message / motivation <span aria-hidden="true">*</span></label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="form-error" id="message-error"></span>
+                    </div>
+        
+                    <button type="submit" class="btn btn--primary btn--full">Envoyer ma demande</button>
+        
+                    <p class="form-success" id="formSuccess" hidden>
+                        <i class="bi bi-check-circle-fill"></i> Votre inscription a bien été envoyée. Nous vous recontacterons
+                        rapidement !
+                    </p>
+                </form>
+        
+                <aside class="registration-info">
+                    <h2>Informations pratiques</h2>
+                    <ul class="info-list">
+                        <li><i class="bi bi-geo-alt-fill"></i> Senegal Convention Centre, Dakar</li>
+                        <li><i class="bi bi-calendar-event-fill"></i> 13 — 15 Octobre 2026</li>
+                        <li><i class="bi bi-envelope-fill"></i> contact@africonnectsummit.africa</li>
+                        <li><i class="bi bi-telephone-fill"></i> +221 78 000 00 00</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
 
+        <!-- fag -->
+        <section class="faq" id="faq">
+            <h2 class="section-title">Questions fréquentes</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <input type="checkbox" id="faq1" class="accordion-toggle">
+                    <label for="faq1" class="accordion-label">L'inscription est-elle payante ?</label>
+                    <div class="accordion-content">
+                        <p>L'accès général est gratuit pour les étudiants sur présentation d'une carte valide. Les autres
+                            profils bénéficient de tarifs préférentiels selon la date d'inscription.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <input type="checkbox" id="faq2" class="accordion-toggle">
+                    <label for="faq2" class="accordion-label">Le badge donne-t-il accès aux 3 jours ?</label>
+                    <div class="accordion-content">
+                        <p>Oui, chaque badge est valable pour l'intégralité des trois jours de conférence, ateliers inclus.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <input type="checkbox" id="faq3" class="accordion-toggle">
+                    <label for="faq3" class="accordion-label">Puis-je proposer une intervention ?</label>
+                    <div class="accordion-content">
+                        <p>Absolument. Sélectionnez « Intervenant » dans le formulaire ci-dessus et décrivez votre proposition
+                            dans le champ message.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <input type="checkbox" id="faq4" class="accordion-toggle">
+                    <label for="faq4" class="accordion-label">Y a-t-il un hébergement partenaire ?</label>
+                    <div class="accordion-content">
+                        <p>Une liste d'hôtels partenaires à tarifs négociés sera envoyée par email après validation de votre
+                            inscription.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <input type="checkbox" id="faq5" class="accordion-toggle">
+                    <label for="faq5" class="accordion-label">Le sommet est-il traduit en anglais ?</label>
+                    <div class="accordion-content">
+                        <p>Oui, une traduction simultanée français / anglais est assurée dans le Grand Amphithéâtre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- carte -->
+        <section class="map" id="carte">
+            <h2 class="section-title">Nous trouver</h2>
+            <div class="map-frame">
+                <iframe src="https://www.google.com/maps?q=Dakar%20Convention%20Centre&output=embed" width="100%" height="400"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Localisation du Dakar Convention Centre">
+                </iframe>
+            </div>
+        </section>
 
+    </main>
+
+<!--FOOTER  -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>AfriConnect Summit</h3>
+                <p>Le sommet annuel des bâtisseurs de la tech africaine.</p>
+            </div>
+            <div class="footer-col">
+                <h3>navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Inscription</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>suivez-nous</h3>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="LinkedIn "><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram "><i class="bi bi-instagram"></i></a>
+                </div>  
+            </div>
+        </div>
+        <p class="footer-copy">&copy;<span dir="year"></span>AfriConnect Summit. Tous droits réservés.</p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria- aria-label="Retour en haut de page">
+        <li class="bi bi-arrow-up"></li>
+    </button>
 
 
 <!-- votre script java -->

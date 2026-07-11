@@ -1,20 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Acceuil</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- votre feuille style css -->
     <link rel="stylesheet" href="Css/Style.css">
 </head>
+
 <body>
     <!-- le contenu de la page -->
+    <!--NAVBAR  -->
+    <header class="navbar" id="navbar">
+        <div class="navb-container">
+            <a href="index.html" class="navb-logo">AfriConnect<span>Summit</span></a>
+            <nav class="navbar-nav" id="navbarNav" aria-label="navigation">
+                <ul class="navbar-links">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="contact.html">Inscription</a></li>
+                </ul>
+                <button>toggle</button>
+            </nav>
+            <div class="navbar-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème sombre / clair">
+                    <i class="bi bi-moon-starts-fill"></i>
+                </button>
+                <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu" arial-expanded="false">
 
+                </button>
+            </div>
+        </div>
+    </header>    
+    <!-- le contenu de la page -->
+    <main>
+        <!-- filtrage dynamique -->
+        <section class="speakers-page" id="intervenants">
+            <div class="filters" role="group" aria-label="Filtrer les intervenants par thématique">
+                <button class="filter active" data-filter="tous">Tous</button>
+                <button class="filter" data-filter="ia-tech">IA & Tech</button>
+                <button class="filter" data-filter="business">Business</button>
+                <button class="filter" data-filter="design">Design</button>
+                <button class="filter" data-filter="data">Data</button>
 
+            </div>
+        </section>
 
+        <!-- hero interne -->
+        <section class="page-hero">
+            <h1>Intervenants</h1>
+            <nav aria-label="Fil d'Ariane" class="breadcrumb">
+                <a href="index.html">Acceuil</a> <span>/</span> <span>Intervenants</span>
+            </nav>
 
+        </section>
 
+        <!-- grille d'intervenants -->
+        <section class="speakers-grid">
+            <article class="speaker-card reveal" data-category="business">
+                <img src="Images/sene.jpg" alt="Portrait d'Amina Diallo">
+                <h3>Amina Diallo</h3>
+                <p>CTO, NovaPay — Sénégal</p>
+            </article>
 
+             <article class="speaker-card reveal" data-category="business">
+                <img src="Images/tof22.jpg" alt="Portrait Kwame">
+                <h3>Kwame Mensah</h3>
+                <p>Fondateur, SolarKit — Ghana</p>
+            </article>
+
+             <article class="speaker-card reveal" data-category="business">
+                <img src="Images/toff7.jpg" alt="Portrait Zahra">
+                <h3>Fatima Zahra</h3>
+                <p>Investisseuse, Sahara Ventures — Maroc</p>
+            </article>
+
+             <article class="speaker-card reveal" data-category="ia-tech">
+                <img src="Images/tof33.jpg" alt="Portrait David">
+                <h3>David Mwangi</h3>
+                <p>VP Engineering, Duka — Kenya</p>
+            </article>
+
+             <article class="speaker-card reveal" data-category="ia-tech">
+                <img src="Images/tof11.jpg" alt="Portrait Bakari">
+                <h3>Sofia Bakari</h3>
+                <p>Lead IA, KiguCloud — Tanzanie</p>
+            </article>
+
+             <article class="speaker-card reveal" data-category="data">
+                <img src="Images/toff66f.jpg " alt="Portrait d'Yessia">
+                <h3>Yessia Idris</h3>
+                <p>Data Engineer, Zuri Data — Nigéria</p>
+            </article>
+
+             <article class="speaker-card reveal" data-category="design">
+                <img src="Images/tof44.jpg" alt="Portrait d'Owusu">
+                <h3>Grace Owusu</h3>
+                <p>Lead Produit, Afripay — Ghana</p>
+            </article>
+
+             <article class="speaker-card reveal" data-category="design">
+                <img src="Images/tof11.jpg" alt="Portrait Toure">
+                <h3>Amara Toure</h3>
+                <p>UX Writer, Tembo Labs — Mali</p>
+            </article>
+
+             <article class="speaker-card reveal" data-category="data">
+                <img src="Images/tof44.jpg" alt="Portrait Chidi">
+                <h3>Chidi Okafor</h3>
+                <p>Analyste Data, Baobab Bank — Nigéria</p>
+            </article>
+
+        </section>
+
+    </main>
+
+<!--FOOTER  -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>AfriConnect Summit</h3>
+                <p>Le sommet annuel des bâtisseurs de la tech africaine.</p>
+            </div>
+            <div class="footer-col">
+                <h3>navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Inscription</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>suivez-nous</h3>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="LinkedIn "><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram "><i class="bi bi-instagram"></i></a>
+                </div>  
+            </div>
+        </div>
+        <p class="footer-copy">&copy;<span dir="year"></span>AfriConnect Summit. Tous droits réservés.</p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria- aria-label="Retour en haut de page">
+        <li class="bi bi-arrow-up"></li>
+    </button>
 
 <!-- votre script java -->
 <script src="Js/Main.js"></script>
