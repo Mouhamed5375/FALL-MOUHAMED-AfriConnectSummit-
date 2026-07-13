@@ -1,0 +1,314 @@
+/* root */
+:root{
+/* mode clair */
+--color-bg: #FBF8F3;
+--color-bg-alt: #F1ECE1;
+--color-text:  #17162B;
+--color-primary: #17162B;
+--color-secondary: #1FA98D;
+--color-accent: #F2A93B;
+--color-border: #E4DECE;
+--color-card-bg: #FFFFFF;
+ 
+/* typographie */
+--font-display: 'Unbounded' , sans-serif;
+--font-body: 'Inter', sans-serif;
+
+/* espacement/formes */
+--radius: 14px;
+--radius-sm: 8px
+--spacing-unit: 1rem;
+--contenair-width: 1180px
+--transition: 0.3s ease;
+--shadow: 0 10px 30px rgba(23, 22, 43, 0.08);
+}
+
+/* mode sombre */
+[data-theme="dark"] {
+--color-bg: #101024;
+--color-bg-alt: #16162E;
+--color-text: #F3F1E9;
+--color-primary: #F3F1E9;
+--color-secondary: #34D6B4;
+--color-accent: #F2A93B;
+--color-border:  #2A2A48;
+--color-card-bg: #181832;
+--shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    transition: background-color var(--transition),color var(--transition);
+    overflow-x: hidden;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+button{
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+input, select, textarea{
+    font-family: inherit;
+    font-size: 1rem;
+}
+h1, h2, h3{
+    font-family: var(--font-display);
+    line-height: 1.2;
+}
+
+.section-title{
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+
+/* bouttons pour transition */
+.btn{
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-family: var(--font-body);
+    transition: stransform var(--transition), box-shadow var(--transition), background-color var(--transition), color var(--transition);
+}
+
+.btn-primary{
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.btn-primary:hover{
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.btn-outline{
+    background: transparent;
+    border: 2px solid var(--color-text);
+    color: var(--color-text);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    transform: translateY(-3px);
+}
+
+.btn--full{
+    width: 100%;
+    text-align: center;
+}
+
+/* navbar dynamique */
+.navbar{
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 1000;
+    padding: 1.2rem 0;
+    transition: background-color var(--transition), box-shadow var(--transition), padding var(--transition);
+}
+
+.navbar.scrolled {
+    background-color: var(--color-bg);
+    box-shadow: var(--shadow);
+    padding: 0.7rem 0;
+}
+
+.navb-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navb-logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.navb-logo span {
+    color: var(--color-accent);
+}
+
+/* flexbox usage */
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-links a {
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color var(--transition);
+}
+
+.navbar-links a:hover::after{
+    content: '';
+    position: absolute;
+    left: 0; 
+    bottom: 0;
+    width: 0; 
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width var(--transition);
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after{
+    width: 100%;
+}
+.navbar-links a.active{
+    color: var(--color-accent);
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle{
+    font-size: 1.2rem;
+    color: var(--color-text);
+    transition: transform var(--transition);
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 26px;
+
+}
+
+.hamburger span {
+    height: 2px;
+    background-color: var(--color-text);
+    border-radius: 2px;
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+     transform: translateY(-7px) rotate(-45deg);
+}
+
+/* footer */
+.footer {
+    background-color: var(--color-bg-alt);
+    padding: 4rem 1,5rem 2rem;
+    margin-top: 5rem;
+}
+
+/* flexbox sage 2 */
+.footer-grid {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+
+}
+
+.footer-col h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+.footer-col a {
+    transition: var(--transition);
+}
+.footer-col a:hover {
+    color: var(--color-accent);
+}
+
+.footer-socials a {
+    transition: color var(--transition), transform var(--transition);
+}
+.footer-socials a:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px);
+}
+
+.footer-copy {
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* bouton retour  */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+    z-index: 900;
+}
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
