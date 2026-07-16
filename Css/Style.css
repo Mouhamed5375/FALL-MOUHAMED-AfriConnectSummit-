@@ -1,39 +1,37 @@
 /* root */
-:root{
-/* mode clair */
---color-bg: #FBF8F3;
---color-bg-alt: #F1ECE1;
---color-text:  #17162B;
---color-primary: #17162B;
---color-secondary: #1FA98D;
---color-accent: #F2A93B;
---color-border: #E4DECE;
---color-card-bg: #FFFFFF;
- 
-/* typographie */
---font-display: 'Unbounded' , sans-serif;
---font-body: 'Inter', sans-serif;
+:root {
+    /* mode clair */
+    --color-bg: #FBF8F3;
+    --color-bg-alt: #F1ECE1;
+    --color-text: #17162B;
+    --color-primary: #17162B;
+    --color-secondary: #1FA98D;
+    --color-accent: #F2A93B;
+    --color-border: #E4DECE;
+    --color-card-bg: #FFFFFF;
 
-/* espacement/formes */
---radius: 14px;
---radius-sm: 8px
---spacing-unit: 1rem;
---contenair-width: 1180px
---transition: 0.3s ease;
---shadow: 0 10px 30px rgba(23, 22, 43, 0.08);
+    /* typographie */
+    --font-display: 'Unbounded', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* espacement/formes */
+    --radius: 14px;
+    --radius-sm: 8px --spacing-unit: 1rem;
+    --contenair-width: 1180px --transition: 0.3s ease;
+    --shadow: 0 10px 30px rgba(23, 22, 43, 0.08);
 }
 
 /* mode sombre */
 [data-theme="dark"] {
---color-bg: #101024;
---color-bg-alt: #16162E;
---color-text: #F3F1E9;
---color-primary: #F3F1E9;
---color-secondary: #34D6B4;
---color-accent: #F2A93B;
---color-border:  #2A2A48;
---color-card-bg: #181832;
---shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --color-bg: #101024;
+    --color-bg-alt: #16162E;
+    --color-text: #F3F1E9;
+    --color-primary: #F3F1E9;
+    --color-secondary: #34D6B4;
+    --color-accent: #F2A93B;
+    --color-border: #2A2A48;
+    --color-card-bg: #181832;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 /* reset */
@@ -45,46 +43,55 @@
     padding: 0;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: var(--font-body);
     background-color: var(--color-bg);
     color: var(--color-text);
     line-height: 1.6;
-    transition: background-color var(--transition),color var(--transition);
+    transition: background-color var(--transition), color var(--transition);
     overflow-x: hidden;
 }
 
-img{
+img {
     max-width: 100%;
     display: block;
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
 }
-ul{
+
+ul {
     list-style: none;
 }
-button{
+
+button {
     font-family: inherit;
     cursor: pointer;
     border: none;
     background: none;
 }
-input, select, textarea{
+
+input,
+select,
+textarea {
     font-family: inherit;
     font-size: 1rem;
 }
-h1, h2, h3{
+
+h1,
+h2,
+h3 {
     font-family: var(--font-display);
     line-height: 1.2;
 }
 
-.section-title{
+.section-title {
     font-family: var(--font-display);
     font-size: clamp(1.6rem, 3vw, 2.2rem);
     text-align: center;
@@ -93,7 +100,7 @@ h1, h2, h3{
 }
 
 /* bouttons pour transition */
-.btn{
+.btn {
     display: inline-block;
     padding: 0.9rem 1.8rem;
     border-radius: var(--radius-sm);
@@ -102,17 +109,17 @@ h1, h2, h3{
     transition: stransform var(--transition), box-shadow var(--transition), background-color var(--transition), color var(--transition);
 }
 
-.btn-primary{
+.btn-primary {
     background-color: var(--color-accent);
     color: var(--color-primary);
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
 }
 
-.btn-outline{
+.btn-outline {
     background: transparent;
     border: 2px solid var(--color-text);
     color: var(--color-text);
@@ -124,15 +131,17 @@ h1, h2, h3{
     transform: translateY(-3px);
 }
 
-.btn--full{
+.btn--full {
     width: 100%;
     text-align: center;
 }
 
 /* navbar dynamique */
-.navbar{
+.navbar {
     position: fixed;
-    top: 0; left: 0; width: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
     padding: 1.2rem 0;
     transition: background-color var(--transition), box-shadow var(--transition), padding var(--transition);
@@ -177,22 +186,23 @@ h1, h2, h3{
     transition: color var(--transition);
 }
 
-.navbar-links a:hover::after{
+.navbar-links a:hover::after {
     content: '';
     position: absolute;
-    left: 0; 
+    left: 0;
     bottom: 0;
-    width: 0; 
+    width: 0;
     height: 2px;
     background-color: var(--color-accent);
     transition: width var(--transition);
 }
 
 .navbar-links a:hover::after,
-.navbar-links a.active::after{
+.navbar-links a.active::after {
     width: 100%;
 }
-.navbar-links a.active{
+
+.navbar-links a.active {
     color: var(--color-accent);
 }
 
@@ -202,7 +212,7 @@ h1, h2, h3{
     gap: 1rem;
 }
 
-.theme-toggle{
+.theme-toggle {
     font-size: 1.2rem;
     color: var(--color-text);
     transition: transform var(--transition);
@@ -230,17 +240,287 @@ h1, h2, h3{
 .hamburger.open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
+
 .hamburger.open span:nth-child(2) {
     opacity: 0;
 }
+
 .hamburger.open span:nth-child(3) {
-     transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* hero  page d'acceuil*/
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 1.5rem 3rem;
+    background: linear-gradient(160deg, var(--color-bg) 60%, var(--color-bg-alt) 100%);
+}
+
+.hero-content {
+    max-width: var(--container-width);
+    margin: 0;
+    animation: fadeInUp 1s ease both;
+}
+
+.hero-eyebrow {
+    color: var(--color-secondary);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+
+}
+
+.hero-title {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 800;
+    max-width: 15ch;
+    margin-bottom: 1.5rem;
+
+}
+
+.hero-subtitle {
+    max-width: 45ch;
+    font-size: 1.15rem;
+    opacity: 0, 85;
+    margin-bottom: 2.2rem;
+
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* compte a rebours usage 3 */
+.countdown {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.countdown-item {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1.2rem;
+    text-align: center;
+    min-width: 72px;
+    box-shadow: var(--shadow);
+}
+
+.countdown-value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.countdown-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+
+/* chriffre cles grid usage */
+.stats {
+    padding: 5rem 1.5rem;
+}
+
+.stats-grid {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.stats-grid {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--color-bg-alt);
+    border-radius: var(--radius);
+    transition: transform var(--transition);
+
+}
+
+.stats-grid:hover {
+    transform: translateY(-6px);
+}
+
+.stat-card-value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--color-secondary);
+}
+
+.stat-card-label {
+    margin-top: 0.5rem;
+    opacity: 0.75;
+}
+
+/* la participation */
+.why {
+    padding: 5rem 1, 5rem;
+}
+
+.why-list {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.why-card {
+    flex: 1 1 280px;
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 2.2rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.why-icon {
+    font-size: 1.8rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.why-card h3 {
+    margin-bottom: 0.6rem;
+}
+
+/* intervenant vedette grid usage */
+.featured-speakers {
+    padding: 5rem 1.5rem;
+}
+
+.featured-speakers-grid {
+    max-width: var(--container-width);
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+}
+
+.speaker-card {
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.speaker-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+.speaker-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.speaker-card h3 {
+    margin: 1rem 0 0.2rem;
+    font-size: 1rem;
+}
+
+.speaker-card p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    padding-bottom: 1.2rem;
+}
+
+.featured-speakers-more {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* sponsors */
+.sponsors {
+    padding: 5rem 1.5rem;
+    text-align: center;
+}
+
+.sponsors-tier {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sponsors-tier span {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-text);
+    opacity: 0.8;
+}
+
+.sponsors-tier--gold span {
+    font-size: 1.6rem;
+    opacity: 1;
+    color: var(--color-accent);
+}
+
+.sponsors-tier--silver span {
+    font-size: 1.2rem;
+}
+
+.sponsors-tier--bronze span {
+    font-size: 0.95rem;
+    opacity: 0.6;
+}
+
+/* animation au scroll */
+.reveal {
+    opacity: 1;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* footer */
 .footer {
     background-color: var(--color-bg-alt);
-    padding: 4rem 1,5rem 2rem;
+    padding: 4rem 1, 5rem 2rem;
     margin-top: 5rem;
 }
 
@@ -265,16 +545,25 @@ h1, h2, h3{
 .footer-col ul li {
     margin-bottom: 0.5rem;
 }
+
 .footer-col a {
     transition: var(--transition);
 }
+
 .footer-col a:hover {
     color: var(--color-accent);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.3rem;
 }
 
 .footer-socials a {
     transition: color var(--transition), transform var(--transition);
 }
+
 .footer-socials a:hover {
     color: var(--color-accent);
     transform: translateY(-3px);
@@ -307,6 +596,7 @@ h1, h2, h3{
     transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
     z-index: 900;
 }
+
 .back-to-top.visible {
     opacity: 1;
     visibility: visible;
