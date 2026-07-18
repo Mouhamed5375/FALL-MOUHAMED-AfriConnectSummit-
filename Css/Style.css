@@ -602,3 +602,434 @@ h3 {
     visibility: visible;
     transform: translateY(0);
 }
+
+
+/* hero interne  (page programme ,intervenant ,contact) */
+.page-hero{
+    padding: 9rem 1.5rem 3rem;
+    background-color: var(--color-bg-alt);
+    text-align: center;
+}
+
+.page-hero h1{
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.8rem;
+}
+
+.breadcrumb {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.breadcrumb a {
+    color: var(--color-secondary);
+}
+
+.breadcrumb span:first-of-type {
+    margin: 0 0.4rem;
+}
+
+/* page programme */
+.schedule{
+    padding: 4rem 1.5rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.tabs {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab{
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg-alt);
+    font-weight: 600;
+    transition: background-color var(--transition), color var(--transition);
+
+}
+
+.tab.active,
+.tab:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.tab-panel[hidden] {
+    display: none;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 1rem 1.2rem;
+    text-align: left;
+}
+
+.schedule-table thead {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+}
+
+.schedule-table tbody tr:nth-child(odd) {
+    background-color: var(--color-bg-alt);
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: var(--color-card-bg);
+}
+
+.schedule-table tbody tr {
+    transition: background-color var(--transition);
+}
+
+
+/* thematiques grid */
+.schedule-table tbody tr:hover {
+    background-color: var(--color-border);
+}
+
+.themes {
+    padding: 4rem 1.5rem;
+}
+
+.themes-grid {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+}
+
+.theme-card {
+    background-color: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: transform var(--transition);
+}
+
+.theme-card:hover {
+    transform: translateY(-6px);
+}
+
+.theme-card-icon {
+    font-size: 1.8rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+/* page intervenants */
+
+.speakers-page {
+    padding: 3rem 1.5rem 5rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.filters {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.filter {
+    padding: 0.6rem 1.3rem;
+    border: 2px solid var(--color-border);
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.filter.active,
+.filter:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #fff;
+}
+
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+}
+
+.speaker-card[data-hidden="true"] {
+    display: none;
+}
+
+/* page contac */
+
+.registration {
+    padding: 4rem 1.5rem;
+}
+
+.registration__wrapper {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+}
+
+.registration__form {
+    flex: 2;
+    background-color: var(--color-bg-alt);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+}
+
+.registration-form h2 {
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.3rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--color-border);
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    transition: border-color var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+.form-group.valid input,
+.form-group.valid select,
+.form-group.valid textarea {
+    border-color: #2FAE60;
+}
+
+.form-group.invalid input,
+.form-group.invalid select,
+.form-group.invalid textarea {
+    border-color: #E23D3D;
+}
+
+.form-error {
+    display: block;
+    color: #E23D3D;
+    font-size: 0.78rem;
+    min-height: 1.1em;
+    margin-top: 0.3rem;
+}
+
+.form-success {
+    margin-top: 1.2rem;
+    background-color: #2FAE60;
+    color: #fff;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    text-align: center;
+}
+
+.registration-info {
+    flex: 1;
+    padding: 2.5rem 0;
+}
+
+.registration-info h2 {
+    margin-bottom: 1.5rem;
+}
+
+.info-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+}
+
+.info-list i {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+}
+
+/* FAQ Accordéon CSS  */
+.faq {
+    padding: 4rem 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.accordion-toggle {
+    display: none;
+}
+
+.accordion-label {
+    display: block;
+    padding: 1.2rem 0;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.accordion-label::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 1.1rem;
+    font-size: 1.3rem;
+    transition: transform var(--transition);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition), padding var(--transition);
+}
+
+.accordion-content p {
+    padding-bottom: 1.2rem;
+    opacity: 0.8;
+}
+
+.accordion-toggle:checked~.accordion__content {
+    max-height: 200px;
+}
+
+.accordion-toggle:checked~.accordion__label::after {
+    transform: rotate(45deg);
+}
+
+.map {
+    padding: 2rem 1.5rem 5rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.map-frame {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* resonsive */
+
+/* Tablette : jusqu'à 1024px, la navigation passe en menu hamburger */
+@media (max-width: 1024px) {
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        max-width: 320px;
+        background-color: var(--color-bg);
+        flex-direction: column;
+        padding: 6rem 2rem;
+        gap: 1.5rem;
+        box-shadow: var(--shadow);
+        transition: right var(--transition);
+    }
+
+    .navbar-links.open {
+        right: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .featured-speakers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .speakers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablette (768px) */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .themes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-wrapper {
+        flex-direction: column;
+    }
+
+    .schedule-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Mobile (375px) */
+@media (max-width: 480px) {
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .countdown {
+        flex-wrap: wrap;
+    }
+
+    .featured-speakers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .speakers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-list {
+        flex-direction: column;
+    }
+
+    .sponsors-tier {
+        gap: 1.2rem;
+    }
+
+    .back-to-top {
+        right: 1rem;
+        bottom: 1rem;
+    }
+}
+
+/* Desktop large (1200px+) */
+@media (min-width: 1200px) {
+    .hero-title {
+        max-width: 18ch;
+    }
+}
